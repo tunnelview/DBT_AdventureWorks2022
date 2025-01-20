@@ -5,6 +5,6 @@ sources:
     database: AdventureWorks2022  
     schema: Sales
     tables:
-      - name: customers
+      - name: customer
       - name: SalesOrderHeader
 
