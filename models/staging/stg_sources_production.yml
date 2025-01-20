@@ -1,0 +1,6 @@
+sources:
+  - name: Shibin
+    database: AdventureWorks2022  
+    schema: Production
+    tables:
+      - name: Product

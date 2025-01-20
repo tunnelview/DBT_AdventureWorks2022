@@ -11,7 +11,7 @@ with stg_products as (SELECT
     ListPrice AS list_price,
     ModifiedDate AS modified_date
 FROM
-        {{ source('AdventureWorks2022', 'Product') }}
+        {{ source('Shibin', 'Product') }}
 WHERE
     ListPrice > 0)
 

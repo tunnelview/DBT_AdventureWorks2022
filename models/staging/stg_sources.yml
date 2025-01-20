@@ -6,14 +6,6 @@ sources:
     schema: Sales
     tables:
       - name: customer
-      - name: SalesOrderHeader
-
-  - name: AdventureWorks2022
-    database: AdventureWorks2022  
-    schema: Production
-    tables:
-      - name: Product
-      
-      
+      - name: SalesOrderHeader    
 
 
