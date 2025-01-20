@@ -1,6 +1,6 @@
 
 --stg_products
-
+--Creating this stging_model
 
 {{ config(materialized='table') }}
 
@@ -11,8 +11,10 @@ with stg_products as (SELECT
     ListPrice AS list_price,
     ModifiedDate AS modified_date
 FROM
-    AdventureWorks2022.Production.Product
+        {{ source('AdventureWorks2022', 'Product') }}
 WHERE
     ListPrice > 0)
 
     Select * from stg_products;
+
+
