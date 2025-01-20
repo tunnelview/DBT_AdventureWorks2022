@@ -12,6 +12,7 @@ with stg_sales as (
     SalesPersonID AS sales_person_id,
     ModifiedDate AS modified_date
 FROM
-    AdventureWorks2022.Sales.SalesOrderHeader)
+    {{ source('AdventureWorks2022', 'SalesOrderHeader') }}
+)
    
 Select * from  stg_sales;

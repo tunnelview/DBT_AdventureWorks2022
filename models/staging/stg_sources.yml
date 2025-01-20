@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: AdventureWorks2022
+    database: AdventureWorks2022  
+    schema: Sales
+    tables:
+      - name: customers
+      - name: SalesOrderHeader
+
