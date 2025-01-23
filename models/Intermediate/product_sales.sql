@@ -12,16 +12,16 @@ Sales order headers are stored in the SalesOrderHeader table, linked to SalesOrd
 
 {{config(materialized='table')}}
 
-	/*select 
+/*--Incorrect code as self joined the same table, didn't use raw or source
+	select 
 	s.ProductID, 
 	p.Name,
 	Round(sum(s.LineTotal),2) as TotalSales,
 	Sum(s.SalesOrderID) as Total_Sales_Order_Count
-	from {{ref('stg_products')} s
-	Left join {{ref('stg_products')} p
+	from {{ref('stg_products')}} s
+	Left join {{ref('stg_products')}} p
 	on p. ProductID = s.ProductID
-	Group by s.ProductID, p.Name
-*/
+	Group by s.ProductID, p.Name */
 
   
   SELECT
@@ -30,13 +30,13 @@ Sales order headers are stored in the SalesOrderHeader table, linked to SalesOrd
     SUM(sod.LineTotal) AS total_sales,
     COUNT(DISTINCT soh.SalesOrderID) AS total_orders
 FROM
-    {{ ref('stg_products') }} p
+    {{ref('stg_products')}} p
 LEFT JOIN
-    {{source('AdventureWorks2022', 'SalesOrderDetail')}}. sod
+    {{source('AdventureWorks2022', 'SalesOrderDetail')}} sod
 ON
     p.product_id = sod.ProductID
 LEFT JOIN
-    {{source('AdventureWorks2022',''SalesOrderHeader)}} soh
+    {{source('AdventureWorks2022','SalesOrderHeader')}} soh
 ON
     sod.SalesOrderID = soh.SalesOrderID
 GROUP BY
