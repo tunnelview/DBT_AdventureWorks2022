@@ -7,5 +7,7 @@ sources:
     tables:
       - name: customer
       - name: SalesOrderHeader    
+      - name: SalesOrderDetail
+
 
 
