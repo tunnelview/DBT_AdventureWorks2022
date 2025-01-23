@@ -1,0 +1,53 @@
+
+
+
+--Project Flow
+
+Raw Data                                                                           
+AdventureWorks2022
+    Production
+    Sales
+    Orders
+
+    Customers - All details about the customers          For Eg: AdventureWorks2022.Production.CUSOTMERS
+    Products - All Details about the products
+    Sales    - All details about the sales made
+    Orders   - All details about the orders placed , 
+    cancelled, rejected etc
+
+ StagingTables                          
+ AdventureWorks
+    Production
+    Sales
+    Orders
+ 
+    Stg_Customers  -- Refined/Renamed Tables & columns about the customers   For eg: AdventureWorks2022.Production.Customers
+    Stg_Products   -- Refined/Renamed Tables & columns about the Products    
+    Stg_Sales   --- Refined/Renamed Tables & columns about the Sales
+    Stg_Orders  --- Refined/Renamed Tables & columns about the Orders
+ 
+ 
+ Intermediate tables
+ AdventureWorks
+    Production
+    Sales
+    Orders
+ 
+ Intermediate_tbl_customers -- Less & refined data 
+ Intermediate_tbl_products -- Less & refined data
+ Intermediate_tbl_sales -- less & refined data
+ Intermediate_tbl_Orders -- Less & refined data
+
+ mart.mart_customer - Final consumable customer table
+ mart.mart_products - Final consumable products table
+ mart.mart_sales --   Final consumable sales table
+  mart.mart_orders -- Final consumable orders table
+
+
+
+  Marts -- consumable table by users and BI- Applications
+
+  mart.mart_customer - Final consumable customer table
+  mart.mart_products - Final consumable products table
+  mart.mart_sales --   Final consumable sales table
+  mart.mart_orders -- Final consumable orders table
