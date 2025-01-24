@@ -11,6 +11,7 @@ SELECT
     AccountNumber AS account_number,
     ModifiedDate AS modified_date
 FROM
-    AdventureWorks2022.Sales.Customer)
+    {{ source('AdventureWorks2022', 'customer') }}
+)
 
 	Select * from stg_customers;

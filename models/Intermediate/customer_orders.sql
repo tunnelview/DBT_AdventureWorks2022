@@ -1,5 +1,7 @@
 --Purpose
 -- Purpose: Join customer and sales data to analyze orders by customers.
+-- Created this model by using stg_customers and stg_sales to get for the 
+--analyses orders by customers.
 
 {{config(materialized='table')}}
 
