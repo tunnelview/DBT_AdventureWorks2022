@@ -15,13 +15,12 @@ total_sales: The total sales amount aggregated for each year.
 
 {{config(materialized= 'table')}}
 
-with sales_by_order as 
-    (select 
-	 Year(OrderDate) as [Year]
-	,round(sum(TotalDue),2) as Total_Sales
-	,count(SalesOrderID) as Sales_Order_ID_Count
-	from {{source('AdventureWorks2022','SalesOrderHeader')}}
-	Group by Year(OrderDate)
-    )
-    Select * from sales_by_order
-	Order by [Year]
+
+    SELECT 
+        YEAR(OrderDate) AS Year,
+        ROUND(SUM(TotalDue), 2) AS Total_Sales,
+        COUNT(SalesOrderID) AS Sales_Order_ID_Count
+    FROM {{ source('AdventureWorks2022', 'SalesOrderHeader') }}
+   
+GROUP BY YEAR(OrderDate)
+
