@@ -22,5 +22,5 @@ total_sales: The total sales amount aggregated for each year.
         COUNT(SalesOrderID) AS Sales_Order_ID_Count
     FROM {{ source('AdventureWorks2022', 'SalesOrderHeader') }}
    
-GROUP BY YEAR(OrderDate)
+    GROUP BY YEAR(OrderDate)
 
