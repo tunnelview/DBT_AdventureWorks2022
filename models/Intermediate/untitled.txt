@@ -38,6 +38,8 @@ AdventureWorks2022
  Intermediate_tbl_sales -- less & refined data
  Intermediate_tbl_Orders -- Less & refined data
 
+Final Marts
+
  mart.mart_customer - Final consumable customer table
  mart.mart_products - Final consumable products table
  mart.mart_sales --   Final consumable sales table
