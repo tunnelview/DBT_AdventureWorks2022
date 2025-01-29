@@ -22,6 +22,6 @@ o.Account_Number as AccountNumber,
 sum(o.Total_Due) as Lifetime_Value,
 Count(o.Sales_Order_Id) as Total_Orders
 
-from {{ref(customer_orders)}} o
-LEFT JOIN {{ref(stg_customers)}} c on c.customer_id = o.Customer_Id
+from {{ref('customer_orders')}} o
+LEFT JOIN {{ref('stg_customers')}} c on c.customer_id = o.Customer_Id
 Group by o.Customer_Id, o.Account_Number

@@ -16,7 +16,7 @@ total_cost: The sum of costs for the product.
 profit: Calculated as total_sales - total_cost for the product
 */
 
-SELECT 
+/*SELECT 
 ps.product_id, 
 ps.product_name, 
 ps.total_sales, 
@@ -33,3 +33,4 @@ ps.total_sales,
 ps.total_orders, 
 p.product_number, 
 p.modified_date
+*/
