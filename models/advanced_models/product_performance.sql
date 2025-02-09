@@ -22,16 +22,16 @@ SELECT
     p.product_id,
     p.product_name,
     SUM(sod.LineTotal) AS total_sales,
-    SUM(sod.LineTotal - p.StandardCost * sod.OrderQty) AS profit,
+    SUM(sod.LineTotal - p.list_price * sod.OrderQty) AS profit,
     COUNT(DISTINCT soh.SalesOrderID) AS total_orders
 FROM
     {{ ref('stg_products') }} p
 LEFT JOIN
-    raw.Sales.SalesOrderDetail sod
+    AdventureWorks2022.Sales.SalesOrderDetail sod
 ON
     p.product_id = sod.ProductID
 LEFT JOIN
-    raw.Sales.SalesOrderHeader soh
+    AdventureWorks2022.Sales.SalesOrderHeader soh
 ON
     sod.SalesOrderID = soh.SalesOrderID
 GROUP BY
