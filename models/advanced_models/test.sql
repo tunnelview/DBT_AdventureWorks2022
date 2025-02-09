@@ -1,0 +1,1 @@
+select * from  {{ source('AdventureWorks2022', 'SalesOrderHeader') }}

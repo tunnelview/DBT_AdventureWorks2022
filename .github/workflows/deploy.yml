@@ -1,0 +1,33 @@
+name: Deploy dbt Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Replace with the branch you're working on
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Use a compatible Python version for dbt
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core dbt-sqlserver  # Replace with your dbt adapter
+
+      - name: Generate dbt Docs
+        run: |
+          dbt docs generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.AdventureWorks2022_WorkFlow }}
+          publish_dir: ./target
