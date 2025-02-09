@@ -36,5 +36,4 @@ ON
     sod.SalesOrderID = soh.SalesOrderID
 GROUP BY
     p.product_id, p.product_name
-ORDER BY
-    profit DESC
+
